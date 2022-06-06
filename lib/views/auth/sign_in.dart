@@ -76,6 +76,7 @@ class _SignInPageState extends State<SignInPage> {
                         child: ElevatedButton(onPressed: (){
                           if(_formKey.currentState!.validate()){
                             signInUser();
+
                             _formKey.currentState!.save();
                           }
                         },
@@ -103,6 +104,7 @@ class _SignInPageState extends State<SignInPage> {
       _emailController.clear();
       _passwordController.clear();
       print("Login Successful");
+      Navigator.pushNamed(context, '/dashboard');
     }
   }
 }

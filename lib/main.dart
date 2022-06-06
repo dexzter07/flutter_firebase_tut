@@ -1,5 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase/views/auth/sign_in.dart';
+import 'package:flutter_firebase/views/auth/sign_up.dart';
+import 'package:flutter_firebase/views/dashboard.dart';
 import 'package:flutter_firebase/views/welcome_screen.dart';
 
 import 'constants/constants.dart';
@@ -14,6 +17,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/welcomeScreen',
+      routes: {
+        '/welcomeScreen': (context) => const WelcomeScreen(),
+        '/login': (context) => SignInPage(),
+        '/register': (context) => SignUpPage(),
+        '/dashboard': (context) => const MainDashboard(),
+
+      },
       debugShowCheckedModeBanner: false,
       title: "Flutter Firebase Tutorial",
       theme: ThemeData(

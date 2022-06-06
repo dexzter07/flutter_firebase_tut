@@ -113,7 +113,7 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   void createUser()async{
-    dynamic result = await _auth.createNewUser(_emailController.text, _passwordController.text);
+    dynamic result = await _auth.createNewUser(_nameController.text, _emailController.text, _passwordController.text);
     if(result == null){
       print("Email is not valid");
     }
